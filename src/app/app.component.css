@@ -1,0 +1,27 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  flex: 50%;
+}
+
+.left {
+  width: 25%;
+  background-color: #aaa;
+}
+
+.right {
+  width: 75%;
+  background-color: #bbb;
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+  .column {
+    width: 100%;
+  }
+}
