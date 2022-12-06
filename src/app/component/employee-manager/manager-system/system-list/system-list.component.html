@@ -4,8 +4,8 @@
     <p [hidden]="!task.hide">Position {{ task.designation }}</p>
     <p [hidden]="!task.hide">Salary ${{ task.salary }}</p>
     <div>
-      <button (click)="showInfo()">Show</button>
-      <button (click)="deleteInfo(task)">Delete</button>
+      <button class="button button1" (click)="showInfo()">Show</button>
+      <button class="button button2" (click)="deleteInfo(task)">Delete</button>
     </div>
   </div>
 </div>
