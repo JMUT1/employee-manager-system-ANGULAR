@@ -7,6 +7,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { ManagerSystemComponent } from './component/employee-manager/manager-system/manager-system.component';
 import { SystemListComponent } from './component/employee-manager/manager-system/system-list/system-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {TaskService} from '../app/services/task.service'
 
 @NgModule({
   declarations: [
@@ -19,9 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

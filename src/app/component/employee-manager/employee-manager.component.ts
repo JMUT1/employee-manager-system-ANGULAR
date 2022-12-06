@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Employee } from 'src/app/shared/task-models';
+import {TaskService} from '../../services/task.service'
 
 @Component({
   selector: 'app-employee-manager',
@@ -10,10 +11,9 @@ import { Employee } from 'src/app/shared/task-models';
 export class EmployeeManagerComponent implements OnInit {
 
 form: FormGroup;
+userInfo: Employee
 
-  // userInfo: Employee
-
-  constructor(private formBuilder : FormBuilder) {
+  constructor(private formBuilder : FormBuilder, private employeeService: TaskService ) {
     this.buildForm()
   }
 
@@ -43,7 +43,8 @@ AddEmployee(event:Event){
 event.preventDefault()
 const value = this.form.value
 console.log(value);
-
+this.employeeService.addUser({name: 'Jose', lastName: 'Ureña', designation: 'Abogado', salary: 1500})
+console.log(this.employeeService.getUser());
 
 }
 }
