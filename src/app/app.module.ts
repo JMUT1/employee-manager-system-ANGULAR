@@ -6,6 +6,7 @@ import { EmployeeManagerComponent } from './component/employee-manager/employee-
 import { HeaderComponent } from './component/header/header.component';
 import { ManagerSystemComponent } from './component/employee-manager/manager-system/manager-system.component';
 import { SystemListComponent } from './component/employee-manager/manager-system/system-list/system-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { SystemListComponent } from './component/employee-manager/manager-system
     SystemListComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
