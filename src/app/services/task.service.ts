@@ -9,18 +9,30 @@ export class TaskService {
   userInfo : Employee[]
 
   constructor(){
-    this.userInfo = [{
-      name: 'Chema', lastName: 'Torres', designation: 'Frontend', salary: 1000, hide: true
-    }]
+    this.userInfo = []
   }
+
 
   getUser(){
-    return this.userInfo
+    if(localStorage.getItem === null){
+      return this.userInfo
+    } else {
+      this.userInfo = JSON.parse(localStorage.getItem('Users')!)
+      return this.userInfo
+    }
   }
 
-addUser(info: Employee){
-  this.userInfo.push(info);
-}
+  addUser(info: Employee){
+    this.userInfo = [];
+    if(localStorage.getItem('Users') === null){
+      this.userInfo.push(info);
+      localStorage.setItem('Users', JSON.stringify(this.userInfo))
+    }else{
+      this.userInfo = JSON.parse(localStorage.getItem('Users')!)
+      this.userInfo.push(info)
+      localStorage.setItem('Users', JSON.stringify(this.userInfo))
+    }
+  }
 
 deleteTask(task: Employee){
 for(let i = 0; i< this.userInfo.length; i++ ){

@@ -11,7 +11,7 @@ import {TaskService} from '../../services/task.service'
 export class EmployeeManagerComponent implements OnInit {
 
 form: FormGroup;
-userInfo: Employee
+userInfo: Employee;
 
   constructor(private formBuilder : FormBuilder, private employeeService: TaskService ) {
     this.buildForm()
@@ -30,41 +30,44 @@ userInfo: Employee
 
 
 
-// userData(): Employee{
-//   return this.userInfo = {
-//     name: this.nameField.value,
-//     lastName: this.lastNameField.value,
-//     designation: this.designationField.value,
-//     salary: this.salaryField.value
-//   }
-// }
+userData(): Employee{
+  return this.userInfo = {
+    name: this.nameField!.value,
+    lastName: this.lastNameField!.value,
+    designation: this.designationField!.value,
+    salary: this.salaryField!.value,
+    hide: this.hideField!.value
+  }
+}
 
 AddEmployee(event:Event){
 event.preventDefault()
-const value = this.form.value
-console.log(value);
-this.employeeService.addUser({name: 'Jose', lastName: 'Ureña', designation: 'Abogado', salary: 1500, hide:true})
+if(this.form.valid){
+  this.employeeService.addUser(this.form.value)
 
-this.form.reset()
+  this.form.reset()
+
+}
+}
+
+
+get nameField(){
+  return this.form.get('name')
+}
+
+get lastNameField(){
+  return this.form.get('lastName')
+}
+
+get designationField(){
+  return this.form.get('designation')
+}
+
+get salaryField(){
+  return this.form.get('salary')
+}
+get hideField(){
+  return this.form.get('boolean')
 }
 
 }
-
-// get nameField(){
-//   return this.form.get('name')
-// }
-
-// get lastNameField(){
-//   return this.form.get('lastName')
-// }
-
-// get designationField(){
-//   return this.form.get('designation')
-// }
-
-// get salaryField(){
-//   return this.form.get('salary')
-// }
-
-
-// }
