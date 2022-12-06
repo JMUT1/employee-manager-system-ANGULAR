@@ -1,0 +1,7 @@
+.card {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+  text-align: center;
+}
