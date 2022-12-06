@@ -43,9 +43,7 @@ AddEmployee(event:Event){
 event.preventDefault()
 const value = this.form.value
 console.log(value);
-this.employeeService.addUser({name: 'Jose', lastName: 'Ureña', designation: 'Abogado', salary: 1500})
-console.log(this.employeeService.getUser());
-
+this.employeeService.addUser({name: 'Jose', lastName: 'Ureña', designation: 'Abogado', salary: 1500, hide:true})
 }
 }
 
