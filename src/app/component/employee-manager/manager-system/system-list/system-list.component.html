@@ -1,8 +1,8 @@
 <div class="card">
   <div>
     <h1>{{ task.name }} {{ task.lastName }}</h1>
-    <p [hidden]="task.hide">Position {{ task.designation }}</p>
-    <p [hidden]="task.hide">Salary ${{ task.salary }}</p>
+    <p [hidden]="!task.hide">Position {{ task.designation }}</p>
+    <p [hidden]="!task.hide">Salary ${{ task.salary }}</p>
     <div>
       <button (click)="showInfo()">Show</button>
       <button (click)="deleteInfo(task)">Delete</button>

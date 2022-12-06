@@ -28,6 +28,7 @@ export class TaskService {
       this.userInfo.push(info);
       localStorage.setItem('Users', JSON.stringify(this.userInfo))
     }else{
+      this.userInfo.push(info)
       this.userInfo = JSON.parse(localStorage.getItem('Users')!)
       this.userInfo.push(info)
       localStorage.setItem('Users', JSON.stringify(this.userInfo))

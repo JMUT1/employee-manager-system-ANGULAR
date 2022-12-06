@@ -30,44 +30,10 @@ userInfo: Employee;
 
 
 
-userData(): Employee{
-  return this.userInfo = {
-    name: this.nameField!.value,
-    lastName: this.lastNameField!.value,
-    designation: this.designationField!.value,
-    salary: this.salaryField!.value,
-    hide: this.hideField!.value
-  }
-}
-
 AddEmployee(event:Event){
 event.preventDefault()
 if(this.form.valid){
   this.employeeService.addUser(this.form.value)
-
   this.form.reset()
-
-}
-}
-
-
-get nameField(){
-  return this.form.get('name')
-}
-
-get lastNameField(){
-  return this.form.get('lastName')
-}
-
-get designationField(){
-  return this.form.get('designation')
-}
-
-get salaryField(){
-  return this.form.get('salary')
-}
-get hideField(){
-  return this.form.get('boolean')
-}
-
+}}
 }
