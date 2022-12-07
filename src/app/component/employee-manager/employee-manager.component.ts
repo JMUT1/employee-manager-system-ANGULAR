@@ -35,5 +35,9 @@ event.preventDefault()
 if(this.form.valid){
   this.employeeService.addUser(this.form.value)
   this.form.reset()
+
+setTimeout(()=>{
+  window.location.reload()
+}, 1500)
 }}
 }
